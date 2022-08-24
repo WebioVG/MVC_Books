@@ -38,6 +38,21 @@ class Model
         return DB::insert($sql, array_values($this->attributes));
     }
 
+    public function edit($id)
+    {
+        $table = self::getTable();
+
+        $columns = implode('=?, ', array_keys($this->attributes));
+        $columns .= '=?';
+
+        $sql = "UPDATE $table SET $columns WHERE id = ?";
+
+        $bindings = array_values($this->attributes);
+        array_push($bindings, $id);
+
+        return DB::update($sql, $bindings, ['id' => $id]);
+    }
+
     public static function all()
     {
         $table = self::getTable();
