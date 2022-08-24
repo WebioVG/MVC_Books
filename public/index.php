@@ -15,6 +15,7 @@ $app->addRoutes([
     ['GET', '/show/[i:id]', 'BookController@show'],
     ['GET|POST', '/add', 'BookController@add'],
     ['GET|POST', '/book/[i:id]/edit', 'BookController@edit'],
+    ['GET|POST', '/book/[i:id]/delete', 'BookController@delete'],
 ]);
 
 $app->run();
