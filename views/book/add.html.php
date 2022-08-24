@@ -3,6 +3,20 @@
     <main class="p-4">
         <h2 class="text-center text-xl font-bold mb-10">Add a new book to the collection</h2>
 
+        <?php if ($success) { ?>
+            <p class="text-green-500 font-semibold text-center border rounded">
+                The book has been added to the collection!
+            </p>
+        <?php } ?>
+
+        <?php if (! empty($errors)) {
+            foreach ($errors as $error) { ?>
+                <p class="text-red-500 font-semibold">
+                    <?= $error ?>
+                </p>
+            <?php }
+        } ?>
+
         <form class="w-[500px] mx-auto" action="" method="post">
             <div class="mb-2 flex justify-center items-center">
                 <label class="inline-block w-[100px]" for="title">Title</label>
