@@ -17,30 +17,35 @@
             <?php }
         } ?>
 
-        <form class="w-[500px] mx-auto" action="" method="post">
+        <form class="w-[500px] mx-auto" action="" method="post" enctype="multipart/form-data">
             <div class="mb-2 flex justify-center items-center">
                 <label class="inline-block w-[100px]" for="title">Title</label>
-                <input type="text" name="title" id="title">
+                <input class="w-[300px]" type="text" name="title" id="title">
             </div>
             
             <div class="mb-2 flex justify-center items-center">
                 <label class="inline-block w-[100px]" for="price">Price</label>
-                <input type="text" name="price" id="price">
+                <input class="w-[300px]" type="text" name="price" id="price">
             </div>
             
             <div class="mb-2 flex justify-center items-center">
                 <label class="inline-block w-[100px]" for="isbn">ISBN</label>
-                <input type="text" name="isbn" id="isbn">
+                <input class="w-[300px]" type="text" name="isbn" id="isbn">
             </div>
             
             <div class="mb-2 flex justify-center items-center">
                 <label class="inline-block w-[100px]" for="author">Author</label>
-                <input type="text" name="author" id="author">
+                <input class="w-[300px]" type="text" name="author" id="author">
             </div>
             
             <div class="mb-2 flex justify-center items-center">
                 <label class="inline-block w-[100px]" for="releasedAtYear">Released in</label>
-                <input type="text" name="releasedAtYear" id="releasedAtYear">
+                <input class="w-[300px]" type="text" name="releasedAtYear" id="releasedAtYear">
+            </div>
+
+            <div class="mb-2 flex justify-center items-center">
+                <label class="inline-block w-[100px]" for="image">Image</label>
+                <input class="w-[300px]" type="file" name="image" id="image">
             </div>
 
             <button class="mx-auto mt-10 block rounded-lg border px-4 py-2 bg-slate-300 font-semibold">Create</button>
