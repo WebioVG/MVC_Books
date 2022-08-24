@@ -113,4 +113,15 @@ class BookController extends Controller
             'success' => $success
         ]);
     }
+
+    public function delete($id)
+    {
+        $book = Book::find($id) ?? null;
+
+        if ($book) {
+            Book::delete($id);
+        }
+
+        header('Location: '.BASE_URL.'/list');
+    }
 }
