@@ -11,6 +11,7 @@ $app->setBasePath(BASE_URL);
 
 $app->addRoutes([
     ['GET', '/', 'HomeController@index'],
+    ['GET', '/list', 'BookController@list'],
 ]);
 
 $app->run();
