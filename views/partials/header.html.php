@@ -9,10 +9,10 @@
 </head>
 
 <body>
-    <header class="flex items-center justify-between h-[10vh] px-6 text-lg bg-slate-200 mb-4">
+    <header class="flex items-center justify-between h-[10vh] px-12 text-lg bg-slate-200 mb-4">
         <h1>Logo</h1>
         <nav>
-            <ul class="flex gap-4">
+            <ul class="flex gap-6">
                 <li><a href="<?= BASE_URL ?>">Home</a></li>
                 <li><a href="<?= BASE_URL ?>/list">List</a></li>
                 <li><a href="<?= BASE_URL ?>/add">Add</a></li>
