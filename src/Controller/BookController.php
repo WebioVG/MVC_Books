@@ -16,4 +16,17 @@ class BookController extends Controller
             'books' => $books
         ]);
     }
+
+    public function show($id)
+    {
+        $book = Book::find($id) ?? null;
+
+        if (! $book) {
+            return $this->notFound();
+        }
+
+        return View::render('book/show', [
+            'book' => $book
+        ]);
+    }
 }
