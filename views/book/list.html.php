@@ -4,6 +4,9 @@
         <?php if (! empty($books)) {
             foreach ($books as $book) { ?>
                 <section class="bg-slate-300 rounded p-3">
+                    <?php if ($book->image !== '') { ?>
+                        <img class="mb-3 w-[100%] h-[400px] object-cover" src="./../<?= $book->image ?>" alt="book cover">
+                    <?php } ?>
                     <h3 class="font-bold"><?= $book->title ?></h3>
                     <hr class="block my-3">
                     <p><span class="font-semibold">Price:</span> <?= $book->getPriceWithTaxes(20) ?>€</p>
