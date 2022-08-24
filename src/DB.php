@@ -5,7 +5,7 @@ namespace M2i\Mvc;
 class DB
 {
     private const HOST = 'localhost';
-    private const NAME = 'MVC_Books';
+    private const NAME = 'books';
     private const USER = 'root';
     private const PASSWORD = '';
     private static $db;
