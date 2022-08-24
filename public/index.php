@@ -13,6 +13,7 @@ $app->addRoutes([
     ['GET', '/', 'HomeController@index'],
     ['GET', '/list', 'BookController@list'],
     ['GET', '/show/[:id]', 'BookController@show'],
+    ['GET', '/add', 'BookController@add'],
 ]);
 
 $app->run();
