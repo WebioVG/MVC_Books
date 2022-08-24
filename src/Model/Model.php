@@ -53,6 +53,15 @@ class Model
         return DB::update($sql, $bindings, ['id' => $id]);
     }
 
+    public static function delete($id)
+    {
+        $table = self::getTable();
+
+        $sql = "DELETE FROM $table WHERE id = ?";
+
+        return DB::delete($sql, $id);
+    }
+
     public static function all()
     {
         $table = self::getTable();
