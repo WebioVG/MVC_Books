@@ -1,19 +1,19 @@
-# Mini framework MVC
+# CRUD Books using MVC
 
-Pour travailler sur le projet :
+To work on the project:
 
 ```bash
 composer install
 ```
 
-Pour lancer les migrations de BDD :
+To migrate the db:
 
 ```bash
 vendor/bin/phinx migrate
 ```
 
-Pour les routes, vérifier le chemin dans le fichier `index.php` :
+Check the index.php path for the routes:
 
 ```php
-define('BASE_URL', '/php-oo/12-mvc/public');
+define('BASE_URL', '/.../public');
 ```
