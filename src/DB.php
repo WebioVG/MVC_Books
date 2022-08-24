@@ -28,16 +28,23 @@ class DB
 
         return $query->fetchAll(\PDO::FETCH_CLASS, $class);
     }
-
+    
     public static function selectOne($sql, $bindings = [], $class = null)
     {
         $query = self::db()->prepare($sql);
         $query->execute($bindings);
         $query->setFetchMode(\PDO::FETCH_CLASS, $class);
-
+        
         return $query->fetch();
     }
 
+    public static function update($sql, $bindings = [])
+    {
+        $query = self::db()->prepare($sql);
+
+        return $query->execute($bindings);
+    }
+    
     public static function insert($sql, $bindings = [])
     {
         return self::db()->prepare($sql)->execute($bindings);
