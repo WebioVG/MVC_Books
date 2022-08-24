@@ -29,4 +29,9 @@ class BookController extends Controller
             'book' => $book
         ]);
     }
+
+    public function add()
+    {
+        return View::render('book/add');
+    }
 }
