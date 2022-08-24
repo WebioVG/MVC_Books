@@ -38,6 +38,7 @@ class BookController extends Controller
         $book->isbn = $_POST['isbn'] ?? null;
         $book->author = $_POST['author'] ?? null;
         $book->releasedAtYear = $_POST['releasedAtYear'] ?? null;
+        $book->image = $_FILES['image'] ?? '';
         $errors = [];
         $success = false;
 
@@ -57,8 +58,25 @@ class BookController extends Controller
             if (empty($book->releasedAtYear)) {
                 $errors['releasedAtYear'] = 'The year of release is required';
             }
+            if ($book->image) {
+                // dd($book->image);
+                if ($book->image['type'] !== 'image/png' && $book->image['type'] !== 'image/jpg' && $book->image['type'] !== 'image/jpeg') {
+                    $errors['image'] = 'Images can only be .png, .jpg or .jpeg.';
+                }
+                if ((int) ($book->image['size']) > 30000) {
+                    $errors['image'] = 'The image is too big.';
+                }
+            }
 
             if (empty($errors)) {
+                if ($book->image) {
+                    $imagesDirectory = __DIR__.'/../../img/';
+                    $name = basename($book->image['name']);
+                    move_uploaded_file($book->image['tmp_name'], "$imagesDirectory/$name");
+
+                    $book->image = 'img/'.$book->image['name'];
+                }
+
                 $success = $book->save();
             }
         }
@@ -122,6 +140,6 @@ class BookController extends Controller
             Book::delete($id);
         }
 
-        header('Location: '.BASE_URL.'/list');
+        $this->redirect(BASE_URL.'/list');
     }
 }
