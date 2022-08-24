@@ -21,7 +21,7 @@ return
         'development' => [
             'adapter' => 'mysql',
             'host' => 'localhost',
-            'name' => 'mvc',
+            'name' => 'Books',
             'user' => 'root',
             'pass' => '',
             'port' => '3306',
