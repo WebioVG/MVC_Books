@@ -32,6 +32,40 @@ class BookController extends Controller
 
     public function add()
     {
-        return View::render('book/add');
+        $book = new Book();
+        $book->title = $_POST['title'] ?? null;
+        $book->price = $_POST['price'] ?? null;
+        $book->isbn = $_POST['isbn'] ?? null;
+        $book->author = $_POST['author'] ?? null;
+        $book->releasedAtYear = $_POST['releasedAtYear'] ?? null;
+        $errors = [];
+        $success = false;
+
+        if (! empty($_POST)) {
+            if (empty($book->title)) {
+                $errors['title'] = 'The title is required';
+            }
+            if (empty($book->price)) {
+                $errors['price'] = 'The price is required';
+            }
+            if (empty($book->isbn)) {
+                $errors['isbn'] = 'The isbn is required';
+            }
+            if (empty($book->author)) {
+                $errors['author'] = 'The author is required';
+            }
+            if (empty($book->releasedAtYear)) {
+                $errors['releasedAtYear'] = 'The year of release is required';
+            }
+
+            if (empty($errors)) {
+                $success = $book->save();
+            }
+        }
+        
+        return View::render('book/add', [
+            'errors' => $errors,
+            'success' => $success
+        ]);
     }
 }
