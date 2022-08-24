@@ -44,6 +44,13 @@ class DB
 
         return $query->execute($bindings);
     }
+
+    public static function delete($sql, $id)
+    {
+        $query = self::db()->prepare($sql);
+
+        return $query->execute([$id]);
+    }
     
     public static function insert($sql, $bindings = [])
     {
