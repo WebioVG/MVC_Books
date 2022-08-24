@@ -68,4 +68,49 @@ class BookController extends Controller
             'success' => $success
         ]);
     }
+
+    public function edit($id)
+    {
+        $book = Book::find(($id));
+
+        if (! $book) {
+            return $this->notFound();
+        }
+
+        $book->title = $_POST['title'] ?? $book->title;
+        $book->price = $_POST['price'] ?? $book->price;
+        $book->isbn = $_POST['isbn'] ?? $book->isbn;
+        $book->author = $_POST['author'] ?? $book->author;
+        $book->releasedAtYear = $_POST['releasedAtYear'] ?? $book->releasedAtYear;
+        $errors = [];
+        $success = false;
+
+        if (! empty($_POST)) {
+            if (empty($book->title)) {
+                $errors['title'] = 'The title is required';
+            }
+            if (empty($book->price)) {
+                $errors['price'] = 'The price is required';
+            }
+            if (empty($book->isbn)) {
+                $errors['isbn'] = 'The isbn is required';
+            }
+            if (empty($book->author)) {
+                $errors['author'] = 'The author is required';
+            }
+            if (empty($book->releasedAtYear)) {
+                $errors['releasedAtYear'] = 'The year of release is required';
+            }
+
+            if (empty($errors)) {
+                $success = $book->edit($book->id);
+            }
+        }
+
+        return View::render('book/edit', [
+            'book' => $book,
+            'errors' => $errors,
+            'success' => $success
+        ]);
+    }
 }
