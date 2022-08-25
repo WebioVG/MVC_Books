@@ -50,7 +50,7 @@ class Model
         $bindings = array_values($this->attributes);
         array_push($bindings, $id);
 
-        return DB::update($sql, $bindings, ['id' => $id]);
+        return DB::update($sql, $bindings);
     }
 
     public static function delete($id)
