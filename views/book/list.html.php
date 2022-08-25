@@ -14,10 +14,13 @@
                     <p><span class="font-semibold">Author:</span> <?= $book->author ?></p>
                     <p><span class="font-semibold">Released:</span> <?= $book->releasedAtYear ?></p>
 
-                    <div class="text-end">
+                    <div class="text-end mb-4">
                         <a class="inline-block border rounded px-4 py-1 bg-slate-100" href="<?= BASE_URL ?>/show/<?= $book->id ?>">See</a>
                         <a class="inline-block border rounded px-4 py-1 bg-slate-100" href="<?= BASE_URL ?>/book/<?= $book->id ?>/edit">Edit</a>
                         <a class="inline-block border rounded px-4 py-1 bg-slate-100" href="<?= BASE_URL ?>/book/<?= $book->id ?>/delete">Delete</a>
+                    </div>
+                    <div class="text-center">
+                        <a class="inline-block border rounded px-4 py-1 bg-slate-100" href="<?= BASE_URL ?>/cart/<?= $book->id ?>/add">Add to cart</a>
                     </div>
                 </section>
             <?php }
