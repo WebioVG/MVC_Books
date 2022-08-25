@@ -16,6 +16,7 @@
                 <li><a href="<?= BASE_URL ?>">Home</a></li>
                 <li><a href="<?= BASE_URL ?>/list">List</a></li>
                 <li><a href="<?= BASE_URL ?>/add">Add</a></li>
+                <li><a href="<?= BASE_URL ?>/cart/list">Cart</a></li>
             </ul>
         </nav>
     </header>
