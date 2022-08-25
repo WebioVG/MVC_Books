@@ -19,4 +19,14 @@ class CartController extends Controller
             'books' => $books
         ]);
     }
+
+    public function list()
+    {
+        $cart = new Cart();        
+        $booksInCart = $cart->books();
+
+        return View::render('cart/list', [
+            'books' => $booksInCart
+        ]);
+    }
 }
