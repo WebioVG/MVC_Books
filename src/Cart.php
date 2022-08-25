@@ -2,6 +2,8 @@
 
 namespace M2i\Mvc;
 
+use M2i\Mvc\Model\Book;
+
 class Cart
 {
     public function add($id, $quantity)
@@ -21,5 +23,19 @@ class Cart
             'book' => $id,
             'quantity' => $quantity
         ]);
+    }
+
+    public function books()
+    {
+        $cart = $_SESSION['cart'];
+        $books = [];
+
+        if (! empty($cart)) {
+            foreach ($cart as $item) {
+                array_push($books, Book::find($item['book']));
+            }
+        }
+
+        return $books;
     }
 }
