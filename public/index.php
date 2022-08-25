@@ -1,5 +1,8 @@
 <?php
 
+session_start();
+if (! $_SESSION['cart']) { $_SESSION['cart'] = []; }
+
 use M2i\Mvc\App;
 
 require __DIR__.'/../vendor/autoload.php';
@@ -16,6 +19,7 @@ $app->addRoutes([
     ['GET|POST', '/add', 'BookController@add'],
     ['GET|POST', '/book/[i:id]/edit', 'BookController@edit'],
     ['GET|POST', '/book/[i:id]/delete', 'BookController@delete'],
+    ['GET', '/cart/[i:id]/add', 'CartController@add'],
 ]);
 
 $app->run();
