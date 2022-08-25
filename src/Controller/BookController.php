@@ -58,8 +58,7 @@ class BookController extends Controller
             if (empty($book->releasedAtYear)) {
                 $errors['releasedAtYear'] = 'The year of release is required';
             }
-            if ($book->image) {
-                // dd($book->image);
+            if ($book->image !== '' && $book->image['type'] !== '') {
                 if ($book->image['type'] !== 'image/png' && $book->image['type'] !== 'image/jpg' && $book->image['type'] !== 'image/jpeg') {
                     $errors['image'] = 'Images can only be .png, .jpg or .jpeg.';
                 }
