@@ -20,6 +20,7 @@ $app->addRoutes([
     ['GET|POST', '/book/[i:id]/edit', 'BookController@edit'],
     ['GET|POST', '/book/[i:id]/delete', 'BookController@delete'],
     ['GET', '/cart/[i:id]/add', 'CartController@add'],
+    ['GET', '/cart/list', 'CartController@list'],
 ]);
 
 $app->run();
