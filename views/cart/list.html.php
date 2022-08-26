@@ -6,13 +6,13 @@
         <?php if (! empty($books)) { ?>
             <section class="border rounded p-4 max-w-[800px] mx-auto">
                 <?php foreach ($books as $book) { ?>
-                    <article class="flex border-b pb-2">
-                        <?php if ($book->image !== '') { ?>
-                            <img class="h-[100px] mr-4" src="../<?= $book->image ?>" alt="book cover">
+                    <article class="flex border-b py-2">
+                        <?php if ($book['book']->image !== '') { ?>
+                            <img class="h-[100px] mr-4" src="../<?= $book['book']->image ?>" alt="book cover">
                         <?php } ?>
                         <div class="flex flex-col">
-                            <h3 class="text-lg"><?= $book->title ?></h3>
-                            <span class="font-bold"><?= $book->price ?>€</span>
+                            <h3 class="text-lg"><?= $book['book']->title ?></h3>
+                            <span class="font-bold"><?= $book['book']->price ?>€</span>
                         </div>
                     </article>
                 <?php } ?>
