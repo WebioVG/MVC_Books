@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-if (! $_SESSION['cart']) { $_SESSION['cart'] = []; }
+if (! in_array('cart', array_keys($_SESSION))) { $_SESSION['cart'] = []; }
 
 use M2i\Mvc\App;
 
