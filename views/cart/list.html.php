@@ -12,7 +12,7 @@
                         <?php } ?>
                         <div class="flex flex-col">
                             <h3 class="text-lg"><?= $book['book']->title ?></h3>
-                            <span class="font-bold"><?= $book['book']->price ?>€</span>
+                            <span class="font-bold"><?= $cart->price($book['book']) ?>€</span>
                         </div>
                     </article>
                 <?php } ?>
