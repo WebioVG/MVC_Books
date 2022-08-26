@@ -6,12 +6,17 @@ use M2i\Mvc\Model\Book;
 
 class Cart
 {
+    private $cart;
+
+    public function __construct()
+    {
+        $this->cart = $_SESSION['cart'] ?? [];
+    }
+
     public function add($id, $quantity)
     {
-        $cart = $_SESSION['cart'];
-
-        if (! empty($cart)) {
-            foreach ($cart as $index => $item) {
+        if (! empty($this->cart)) {
+            foreach ($this->cart as $index => $item) {
                 if ($item['book'] === $id) {
                     $_SESSION['cart'][$index]['quantity'] += $quantity;
                     return $_SESSION['cart'];
@@ -27,11 +32,10 @@ class Cart
 
     public function books()
     {
-        $cart = $_SESSION['cart'];
         $books = [];
 
-        if (! empty($cart)) {
-            foreach ($cart as $item) {
+        if (! empty($this->cart)) {
+            foreach ($this->cart as $item) {
                 array_push($books, Book::find($item['book']));
             }
         }
