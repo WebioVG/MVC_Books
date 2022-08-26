@@ -23,7 +23,8 @@ class CartController extends Controller
         $booksInCart = $cart->books();
 
         return View::render('cart/list', [
-            'books' => $booksInCart
+            'books' => $booksInCart,
+            'cart' => $cart
         ]);
     }
 }
