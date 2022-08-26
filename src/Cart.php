@@ -36,7 +36,10 @@ class Cart
 
         if (! empty($this->cart)) {
             foreach ($this->cart as $item) {
-                array_push($books, Book::find($item['book']));
+                array_push($books, [
+                    'book' => Book::find($item['book']),
+                    'quantity' => $item['quantity'] 
+                ]);
             }
         }
 
