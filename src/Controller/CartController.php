@@ -13,11 +13,8 @@ class CartController extends Controller
     {
         $cart = new Cart();        
         $cart->add((int) $id, 1);
-        $books = Book::all();
-
-        return View::render('book/list', [
-            'books' => $books
-        ]);
+        
+        $this->redirect(BASE_URL.'/list');
     }
 
     public function list()
