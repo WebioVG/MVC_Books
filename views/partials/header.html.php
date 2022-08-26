@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <header class="fixed w-full flex items-center justify-between h-[10vh] px-12 text-white text-lg bg-emerald-600">
+    <header class="fixed w-full flex items-center justify-between h-[10vh] px-12 text-white text-lg bg-emerald-600 z-10">
         <a href="<?= BASE_URL ?>" class="font-['Kranky'] text-3xl">Books</a>
         <nav>
             <ul class="flex gap-8">
