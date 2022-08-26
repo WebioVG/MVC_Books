@@ -45,4 +45,15 @@ class Cart
 
         return $books;
     }
+
+    public function price($inputItem)
+    {
+        $items = $this->books();
+        
+        foreach ($items as $item) {
+            if ($item['book']->id === $inputItem->id) {
+                return $item['book']->price * $item['quantity'];
+            }
+        }
+    }
 }
