@@ -1,4 +1,6 @@
 <?php require __DIR__.'/../partials/header.html.php'; ?>
+
+    <h2 class="text-center text-3xl font-bold mb-10">Our books</h2>
     
     <main class="grid grid-cols-3 gap-10 p-4 max-w-[1000px] mx-auto">
         <?php if (! empty($books)) {

@@ -1,7 +1,7 @@
 <?php require __DIR__.'/../partials/header.html.php'; ?>
     
     <main class="p-4">
-        <h2 class="text-center text-xl font-bold mb-10">Edit a book</h2>
+        <h2 class="text-center text-3xl font-bold mb-10">Edit a book</h2>
 
         <?php if ($success) { ?>
             <p class="text-green-500 font-semibold text-center border rounded">
