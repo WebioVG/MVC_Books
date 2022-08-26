@@ -1,5 +1,11 @@
-		<footer class="flex items-center justify-center h-[10vh] px-6 bg-slate-200 mt-4">
-			<p class="text-center w-[80%]">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo ad ipsa ipsam quo, doloribus ullam. Dignissimos, officiis qui in delectus at, harum voluptate maxime saepe incidunt vel repudiandae facilis a!</p>
+		<footer class="flex items-center justify-between h-[10vh] px-12 bg-emerald-600 text-white text-lg mt-4">
+			<p class="">Copyright &copy;</p>
+			<nav>
+				<ul class="flex gap-8">
+					<li><a href="<?= BASE_URL ?>">About</a></li>
+					<li><a href="<?= BASE_URL ?>">Contact</a></li>
+				</ul>
+			</nav>
 		</footer>
 	</body>
 </html>
