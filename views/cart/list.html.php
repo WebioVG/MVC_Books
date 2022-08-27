@@ -29,6 +29,12 @@
                         </div>
                     </article>
                 <?php } ?>
+                <article class="text-end border-b py-2">
+                    <div class="font-bold flex flex-col">
+                        <span>Total</span>
+                        <span class="text-lg"><?= $cart->total() ?>€</span>
+                    </div>
+                </article>
             </section>
         <?php } ?>
     </main>
