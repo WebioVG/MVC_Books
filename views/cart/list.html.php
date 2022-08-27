@@ -13,7 +13,7 @@
                             <?php } ?>
                             <div class="flex flex-col">
                                 <h3 class="text-lg mb-1"><?= $book['book']->title ?></h3>
-                                <span class="font-bold"><?= $book['book']->price ?>€</span>
+                                <span class="font-bold"><?= $book['book']->getPriceWithTaxes(20) ?>€</span>
                             </div>
                         </div>
                         <div class="flex gap-5">
