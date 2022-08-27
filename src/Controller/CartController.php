@@ -27,4 +27,12 @@ class CartController extends Controller
             'cart' => $cart
         ]);
     }
+
+    public function delete($id)
+    {
+        $cart = new Cart();
+        $cart->delete($id);
+
+        $this->redirect(BASE_URL.'/cart/list');
+    }
 }
