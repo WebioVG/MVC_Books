@@ -52,8 +52,19 @@ class Cart
         
         foreach ($items as $item) {
             if ($item['book']->id === $inputItem->id) {
-                return $item['book']->price * $item['quantity'];
+                return $item['book']->price * $item['quantity'] * 1.2;
             }
         }
+    }
+
+    public function total()
+    {
+        $items = $this->books();
+        
+        $total = array_sum(array_map(function($item) {
+            return $item['book']->price * $item['quantity'] * 1.2;
+        }, $items));
+
+        return $total;
     }
 }
