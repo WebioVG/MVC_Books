@@ -1,8 +1,8 @@
 <?php require __DIR__.'/../partials/header.html.php'; ?>
 
-    <h2 class="text-center text-3xl font-bold mb-10">Our books</h2>
+    <h2 class="text-center text-3xl font-bold mb-10 pt-4">Our books</h2>
     
-    <main class="grid grid-cols-3 gap-10 p-4 max-w-[1000px] mx-auto">
+    <main class="grid grid-cols-4 gap-10 p-4 max-w-[1200px] mx-auto">
         <?php if (! empty($books)) {
             foreach ($books as $book) { ?>
                 <section class="bg-slate-100/50 border rounded drop-shadow-lg backdrop-blur-xl">
