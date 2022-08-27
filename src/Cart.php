@@ -60,11 +60,21 @@ class Cart
     public function total()
     {
         $items = $this->books();
-        
+
         $total = array_sum(array_map(function($item) {
             return $item['book']->price * $item['quantity'] * 1.2;
         }, $items));
 
         return $total;
+    }
+
+    public function delete($id)
+    {
+        foreach ($this->cart as $key => $item) {
+            if ($item['book'] === (int) $id) {
+                array_splice($_SESSION['cart'], $key, 1);
+                return $_SESSION['cart'];
+            }
+        }
     }
 }
